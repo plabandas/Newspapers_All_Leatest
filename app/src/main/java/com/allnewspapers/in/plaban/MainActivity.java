@@ -20,6 +20,10 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle toggle;
+    NavigationView navigationView;
+
     private TabLayout tabLayout ;
     private ViewPager viewPager ;
     private ViewPagerAdapter adapter ;
@@ -27,8 +31,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.drawer_activity_main);
 
+        Toolbar toolbar = findViewById(R.id.toolbar_id);
+        setSupportActionBar(toolbar);
+        drawerLayout = findViewById(R.id.drawer_id);
+        navigationView = findViewById(R.id.nav_view);
+
+        toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(true);
+        toggle.syncState();
 
 
         tabLayout = findViewById(R.id.tablayout_id);
