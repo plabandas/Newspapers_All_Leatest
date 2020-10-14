@@ -51,6 +51,8 @@ public class RecyclerViewAdapterDemo_English extends RecyclerView.Adapter<Recycl
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
+        holder.img.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_transition));
+
         holder.img.setImageResource(mdata.get(position).getPhoto());
 
     }
