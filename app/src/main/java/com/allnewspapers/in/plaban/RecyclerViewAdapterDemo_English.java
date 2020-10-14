@@ -21,6 +21,7 @@ public class RecyclerViewAdapterDemo_English extends RecyclerView.Adapter<Recycl
     private Context mContext;
     List<Newspapers> mdata;
     int id;
+    String string ;
 
     public RecyclerViewAdapterDemo_English(Context mContext, List<Newspapers> mdata) {
         this.mContext = mContext;
@@ -41,7 +42,7 @@ public class RecyclerViewAdapterDemo_English extends RecyclerView.Adapter<Recycl
             public void onClick(View v) {
                 id = vHolder.getAdapterPosition();
 
-                Toast.makeText(mContext, "Button is Clicked : ID = " + String.valueOf(id), Toast.LENGTH_SHORT).show();
+                condition();
             }
         });
 
@@ -77,5 +78,91 @@ public class RecyclerViewAdapterDemo_English extends RecyclerView.Adapter<Recycl
             item_cardView = itemView.findViewById(R.id.item_card_id);
         }
 
+    }
+
+
+
+
+    public void condition() {
+
+        Intent intent = new Intent(mContext, All_Web_Pages.class);
+
+        ifconditions();
+
+        intent.putExtra("Web", string);
+        mContext.startActivity(intent);
+
+    }
+
+
+    public void ifconditions() {
+
+        string = null;
+
+        switch (id) {
+            case 0:
+                string = "https://www.thedailystar.net/";
+                break;
+            case 1:
+                string = "http://www.daily-sun.com/";
+                break;
+            case 2:
+                string = "https://www.bbc.com/news";
+                break;
+            case 3:
+                string = "https://edition.cnn.com/";
+                break;
+            case 4:
+                string = "https://en.prothomalo.com/";
+                break;
+            case 5:
+                string = "http://www.theindependentbd.com/";
+                break;
+            case 6:
+                string = "https://www.banglanews24.com/english";
+                break;
+            case 7:
+                string = "https://bdnews24.com/";
+                break;
+            case 8:
+                string = "http://www.observerbd.com/";
+                break;
+            case 9:
+                string = "http://thebangladeshtoday.com/";
+                break;
+            case 10:
+                string = "https://www.financialexpress.com/world-news/";
+                break;
+            case 11:
+                string = "http://www.newstoday.com.bd/";
+                break;
+            case 12:
+                string = "https://www.nytimes.com/";
+                break;
+            case 13:
+                string = "https://www.theguardian.com/international";
+                break;
+            case 14:
+                string = "https://news.google.com/";
+                break;
+            case 15:
+                string = "https://www.usatoday.com/";
+                break;
+            case 16:
+                string = "https://www.foxnews.com/";
+                break;
+            case 17:
+                string = "https://news.sky.com/";
+                break;
+            case 18:
+                string = "http://www.espn.com/";
+                break;
+            case 19:
+                string = "http://www.newagebd.net/";
+                break;
+            case 20:
+                string = "https://www.cnet.com/";
+                break;
+        }
     }
 }

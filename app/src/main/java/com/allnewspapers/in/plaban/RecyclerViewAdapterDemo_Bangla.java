@@ -41,7 +41,7 @@ public class RecyclerViewAdapterDemo_Bangla extends RecyclerView.Adapter<Recycle
             public void onClick(View v) {
                 id = vHolder.getAdapterPosition();
 
-                Toast.makeText(mContext,"Button is Clicked : ID = "+String.valueOf(id),Toast.LENGTH_SHORT).show();
+                condition();
             }
         });
 
@@ -76,6 +76,135 @@ public class RecyclerViewAdapterDemo_Bangla extends RecyclerView.Adapter<Recycle
             img = itemView.findViewById(R.id.newspaper_pic_demo);
             item_cardView = itemView.findViewById(R.id.item_card_id);
         }
+
+    }
+
+
+
+    public void condition() {
+
+        Intent intent = new Intent(mContext, All_Web_Pages.class);
+
+        ifconditions();
+
+        intent.putExtra("Web", string);
+        mContext.startActivity(intent);
+    }
+
+    public void ifconditions() {
+
+        if (id == 0) {
+            string = "https://www.prothomalo.com/";
+        }
+        if (id == 1) {
+            string = "http://www.bd-pratidin.com/";
+        }
+        if (id == 2) {
+            string = "https://www.kalerkantho.com/";
+        }
+        if (id == 3) {
+            string = "https://www.jugantor.com/";
+        }
+        if (id == 4) {
+            string = "https://www.bbc.com/bengali";
+        }
+        if (id == 5) {
+            string = "https://www.bhorerkagoj.com/";
+        }
+        if (id == 6) {
+            string = "https://chakrirkhobor.com.bd/";
+        }
+        if (id == 7) {
+            string = "https://samakal.com/";
+        }
+        if (id == 8) {
+            string = "http://web.dailyjanakantha.com/";
+        }
+        if (id == 9) {
+            string = "http://www.dainikshiksha.com/";
+        }
+        if (id == 10) {
+            string = "https://www.sharebazarnews.com/";
+        }
+        if (id == 11) {
+            string = "https://www.somoynews.tv/";
+        }
+        if (id == 12) {
+            string = "http://www.ittefaq.com.bd/";
+        }
+        if (id == 13) {
+            string = "http://www.alokitobangladesh.com/";
+        }
+        if (id == 14) {
+            string = "https://www.manobkantha.com.bd/";
+        }
+        if (id == 15) {
+            string = "http://www.bssnews.net/";
+        }
+        if (id == 16) {
+            string = "http://www.dailynayadiganta.com/";
+        }
+        if (id == 17) {
+            string = "http://bonikbarta.net/";
+        }
+        if (id == 18) {
+            string = "https://www.banglanews24.com/";
+        }
+        if (id == 19) {
+            string = "http://www.dhakatimes24.com/";
+        }
+        if (id == 20) {
+            string = "https://dmpnews.org/";
+        }
+        if (id == 21) {
+            string = "http://www.dainikamadershomoy.com/";
+        }
+        if (id == 22) {
+            string = "https://www.dailykaratoa.com/";
+        }
+        if (id == 23) {
+            string = "http://dainikpurbokone.net/";
+        }
+        if (id == 24) {
+            string = "http://www.dailysangram.com/";
+        }
+        if (id == 25) {
+            string = "http://www.poriborton.news/";
+        }
+        if (id == 26) {
+            string = "https://www.jagonews24.com/";
+        }
+        if (id == 27) {
+            string = "http://www.somoyerkonthosor.com/";
+        }
+        if (id == 28) {
+            string = "https://www.priyo.com/";
+        }
+        if (id == 29) {
+            string = "https://dainikazadi.net/";
+        }
+        if (id == 30) {
+            string = "https://www.dailyinqilab.com/";
+        }
+        if (id == 31) {
+            string = "http://www.risingbd.com/";
+        }
+        if (id == 32) {
+            string = "https://techshohor.com/";
+        }
+        if (id == 33) {
+            string = "http://www.jaijaidinbd.com/";
+        }
+        if (id == 34) {
+            string = "https://bangla.dhakatribune.com/";
+        }
+        if (id == 35) {
+            string = "http://www.mzamin.com/";
+        }
+        if (id == 36) {
+            string = "https://bangla.bdnews24.com/";
+        }
+
 
     }
 
