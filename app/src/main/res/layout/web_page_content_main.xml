@@ -7,13 +7,54 @@
     android:background="#061D63"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3D9CDD"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/App_bar_text_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:textColor="#070707"
+                android:textSize="17dp"
+                android:textStyle="bold|italic"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:id="@+id/App_bar_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"  />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ProgressBar
         android:id="@+id/progressBar_ID"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="8dp"
+        android:layout_below="@+id/toolbar"
         android:layout_gravity="top"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
