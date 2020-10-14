@@ -15,10 +15,12 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.allnewspapers.in.plaban.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
@@ -33,15 +35,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_activity_main);
 
+
         Toolbar toolbar = findViewById(R.id.toolbar_id);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_id);
         navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
+
 
 
         tabLayout = findViewById(R.id.tablayout_id);
@@ -58,6 +63,29 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
     }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        String string = null;
+        Intent intent = new Intent(this, All_Web_Pages.class);
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+        if (item.getItemId()== R.id.menuTab){
+
+            Toast.makeText(this, "Internet Speed Test", Toast.LENGTH_SHORT).show();
+
+            string = "https://fast.com/";
+
+            intent.putExtra("Web", string);
+            this.startActivity(intent);
+
+        }
+
+        return false;
+    }
+
 
 
 }
